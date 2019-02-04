@@ -55,9 +55,9 @@ router.delete('/:id', validateId, function(req,res){
     Location.findByIdAndDelete(id).then(function(location){
         res.send({
             notice: 'Successfully deleted the record'
-        }).catch(function(err){
-            res.send(err)
         })
+    }).catch(function(err){
+        res.send(err)
     })
 })
 
