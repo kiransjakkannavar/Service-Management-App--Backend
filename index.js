@@ -5,6 +5,7 @@ const {mongoose} = require('./config/db');
 const {locationsController} = require('./app/controllers/locations_controller')
 const { servicesController } = require('./app/controllers/service_controller')
 const { userController } = require('./app/controllers/user_controller')
+const { serviceRequestController } = require('./app/controllers/service-requests-controller')
 
 const port = 3001
 
@@ -18,6 +19,7 @@ app.get('/', function(req, res){
 app.use('/admin/locations', locationsController)
 app.use('/admin/services', servicesController)
 app.use('/users', userController)
+app.use('/servicerequests', serviceRequestController)
 
 app.listen(port, function(){
     console.log(`listening to the port`, port)

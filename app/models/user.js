@@ -121,7 +121,7 @@ userSchema.statics.findByToken = function(token){
     let tokenData;
 
     try{
-        tokenData = jwt.verify(token, 'supersecret')
+        tokenData = jwt.verify(token, 'secretpassword')
     }catch(err){
         return Promise.reject(err.message)
     }

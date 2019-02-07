@@ -17,7 +17,8 @@ router.post('/', (req, res)=>{
         return user.generateToken()
     }).then((token)=>{
         console.log(user)
-        res.header('x-auth',token).send(user)
+        //res.header('x-auth',token).send(user)
+        res.json({'x-auth':token}).send()
     }).catch(err =>{
         res.send(err)
     })
@@ -36,7 +37,8 @@ router.post('/login',(req, res)=>{
     User.findByCredentials(body.email, body.password).then(user =>{
         return user.generateToken()
     }).then((token)=>{
-        res.header('x-auth', token).send()
+        //res.header('x-auth', token).send()
+        res.json({'x-auth':token}).send()
     }).catch(err =>{
         res.status(401).send(err)
     })
