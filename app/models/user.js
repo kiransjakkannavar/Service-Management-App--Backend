@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs')
 const {vendorSchema} = require('./vendorschema')
 // const {addressSchema} = require('./addressSchema')
 const jwt = require('jsonwebtoken')
-
+                                                                                                                                                                                                
 const Schema = mongoose.Schema
 
 

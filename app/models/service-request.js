@@ -18,7 +18,7 @@ const serviceRequestSchema = new Schema({
         ref:'User',
         required:true
     },
-    status:[statusSchema],
+    status:statusSchema,
     location:{
         type:Schema.Types.ObjectId,
         ref:'Location',

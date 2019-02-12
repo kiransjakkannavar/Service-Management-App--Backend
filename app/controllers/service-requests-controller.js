@@ -41,6 +41,18 @@ router.post('/', authenticateUser, function(req,res){
     })
 })
 
+//edit a status of the service request
+router.put('/orders/:id', authenticateUser,authorizeVendor,function(req,res){
+    let id = req.params.id
+    let body = req.body
+    ServiceRequest.findByIdAndUpdate(id, {$set:body},{new:true}).then(function(service){
+        res.send(service)
+    }).catch(function(err){
+        res.send(err)
+    })
+
+})
+
 module.exports ={
     serviceRequestController : router
 }

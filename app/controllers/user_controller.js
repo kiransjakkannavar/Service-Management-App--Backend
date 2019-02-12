@@ -18,7 +18,10 @@ router.post('/', (req, res)=>{
     }).then((token)=>{
         console.log(user)
         //res.header('x-auth',token).send(user)
-        res.json({'x-auth':token}).send()
+        res.json({'x-auth':token}).send({
+            message:'Successfully generated user',
+            token
+        })
     }).catch(err =>{
         res.send(err)
     })
